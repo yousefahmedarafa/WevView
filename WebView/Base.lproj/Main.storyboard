@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCN-m1-RTR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UcM-5V-xYa">
+                                <rect key="frame" x="141" y="370.66666666666669" width="93" height="86"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="FXm-Sn-o52"/>
+                                    <constraint firstAttribute="width" constant="93" id="p1q-Sk-M5v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7e-TF-YvY">
+                                <rect key="frame" x="160" y="430.66666666666669" width="55" height="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gMw-0F-Mno">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="e7e-TF-YvY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7AQ-lT-6HE"/>
+                            <constraint firstItem="TCN-m1-RTR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="AaQ-ru-7wj"/>
+                            <constraint firstItem="gMw-0F-Mno" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JH6-m2-Ths"/>
+                            <constraint firstItem="e7e-TF-YvY" firstAttribute="top" secondItem="gMw-0F-Mno" secondAttribute="bottom" constant="6" id="Lsp-CF-QQf"/>
+                            <constraint firstItem="UcM-5V-xYa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="7.5" id="WYo-5t-GSZ"/>
+                            <constraint firstItem="UcM-5V-xYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fF7-hG-d1H"/>
+                            <constraint firstItem="TCN-m1-RTR" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="gMD-al-R0D"/>
+                            <constraint firstItem="TCN-m1-RTR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pIp-fv-GX7"/>
+                            <constraint firstItem="TCN-m1-RTR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uk7-QL-GDH"/>
+                            <constraint firstItem="gMw-0F-Mno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zGu-Iv-ZMh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activity" destination="gMw-0F-Mno" id="OQK-v6-xVj"/>
+                        <outlet property="bg" destination="UcM-5V-xYa" id="qMl-9G-pzb"/>
+                        <outlet property="loadingLbl" destination="e7e-TF-YvY" id="iYc-HD-W7e"/>
+                        <outlet property="webView" destination="TCN-m1-RTR" id="Lbn-YJ-e22"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="112.3152709359606"/>
         </scene>
     </scenes>
 </document>
